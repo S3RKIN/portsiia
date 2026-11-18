@@ -1,0 +1,14 @@
+{
+  "name": "portsiia",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Український калькулятор рецептів: перерахунок інгредієнтів під потрібну кількість порцій",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"src/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  }
+}
