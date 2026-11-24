@@ -23,6 +23,9 @@ const cases: Array<[number | null, Unit | null, string]> = [
   [11, 'pinch', '11 дрібок'],
   [null, null, 'за смаком'],
   [1.5, null, '1,5'],
+  [903, 'ml', '905 мл'],
+  [1207, 'ml', '1,21 л'],
+  [96, 'ml', '96 мл'],
 ];
 
 describe('formatAmount', () => {

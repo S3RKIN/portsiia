@@ -41,4 +41,16 @@ describe('scaleRecipe', () => {
     }
     assert.throws(() => scaleRecipe({ ...pancakes, servings: 0 }, 2), RangeError);
   });
+  it('зберігає дробові кількості без округлення', () => {
+    const res = scaleRecipe(pancakes, 3);
+    assert.equal(res.servings, 3);
+    assert.equal(res.ingredients[0]?.amount, 150);
+    assert.equal(res.ingredients[1]?.amount, 1.5);
+  });
+  it('змінює порцію на дробове значення (менше 1)', () => {
+    const res = scaleRecipe(pancakes, 0.5);
+    assert.equal(res.servings, 0.5);
+    assert.equal(res.ingredients[0]?.amount, 25);
+    assert.equal(res.ingredients[1]?.amount, 0.25);
+  });
 });
